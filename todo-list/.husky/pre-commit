@@ -1,0 +1,24 @@
+#!/bin/sh
+# 1. Source Husky (while still at the Git root)
+. "$(dirname "$0")/_/husky.sh"
+
+# 2. Get staged files, filter only those inside 'todo-list', and strip 'todo-list/' from the path
+# This turns "todo-list/src/index.ts" into "src/index.ts"
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep '^todo-list/' | sed 's|^todo-list/||' | grep -E '\.(js|ts)$')
+
+# 3. If no matching files in todo-list are staged, exit early
+if [ -z "$STAGED_FILES" ]; then
+  exit 0
+fi
+
+# 4. Now safely change directory to your frontend app
+cd todo-list
+
+echo "Linting and formatting staged files in todo-list..."
+
+# 5. Run tools using local relative paths
+pnpm exec prettier --write $STAGED_FILES
+pnpm exec eslint --fix $STAGED_FILES
+
+# 6. Re-stage using the local paths relative to where we are
+git add $STAGED_FILES
