@@ -1,0 +1,2 @@
+cd todo-list
+pnpm run format && pnpm run lint
