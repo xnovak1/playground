@@ -1,0 +1,7 @@
+<div class="flex">
+  <mat-checkbox [checked]="isDone()" (change)="toggleTask()"></mat-checkbox>
+  <div>
+    <p>Description: {{ description() }}</p>
+    <p>Status: {{ isDone() ? 'Done' : 'Not Done' }}</p>
+  </div>
+</div>
