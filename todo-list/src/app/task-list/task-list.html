@@ -1,0 +1,18 @@
+<div>
+  <form (submit)="addTask(); $event.preventDefault()">
+    <input
+      type="text"
+      placeholder="Task description"
+      [value]="description()"
+      (input)="description.set(($any($event.target)).value)"
+    />
+
+    <button matButton type="submit" [disabled]="!canAddTask()">Add Task</button>
+  </form>
+
+  @for (task of tasks(); track $index) {
+    <task [description]="task.description" [isDone]="task.completed"></task>
+  }
+
+  <p>Task Count: {{ taskCount() }}</p>
+</div>
