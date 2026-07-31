@@ -1,5 +1,5 @@
 <div>
-  <form (submit)="addTask(); $event.preventDefault()">
+  <form (ngSubmit)="addTask()">
     <input
       type="text"
       placeholder="Task description"
@@ -11,7 +11,7 @@
   </form>
 
   @for (task of tasks(); track $index) {
-    <task [description]="task.description" [isDone]="task.completed"></task>
+    <task [description]="task.description" [isDone]="task.completed" (taskDeleted)="deleteTask($index)"></task>
   }
 
   <p>Task Count: {{ taskCount() }}</p>
