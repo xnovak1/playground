@@ -1,5 +1,5 @@
 import { Component, computed, signal } from '@angular/core';
-import { TaskComponent, TaskItem } from '../task/task';
+import { TaskComponent, TaskItem } from './components/task/task';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 
