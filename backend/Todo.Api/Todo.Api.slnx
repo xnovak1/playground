@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/Modules/" />
+  <Folder Name="/Modules/Tasks/">
+    <Project Path="../Modules.Tasks.Api/Modules.Tasks.Api.csproj" />
+    <Project Path="../Modules.Tasks.Application/Modules.Tasks.Application.csproj" />
+    <Project Path="../Modules.Tasks.Domain/Modules.Tasks.Domain.csproj" />
+    <Project Path="../Modules.Tasks.Infrastructure/Modules.Tasks.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/Modules/Users/">
+    <Project Path="../Modules.Users.Api/Modules.Users.Api.csproj" />
+    <Project Path="../Modules.Users.Application/Modules.Users.Application.csproj" />
+    <Project Path="../Modules.Users.Domain/Modules.Users.Domain.csproj" />
+    <Project Path="../Modules.Users.Infrastructure/Modules.Users.Infrastructure.csproj" />
+  </Folder>
+  <Project Path="Todo.Api.csproj" />
+</Solution>
