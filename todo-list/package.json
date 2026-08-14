@@ -8,8 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "format": "prettier --write \"src/**/*.{ts,js,json,css,scss}\"",
-    "prepare": "cd .. && husky todo-list/.husky"
+    "format": "prettier --write \"src/**/*.{ts,js,json,css,scss}\""
   },
   "private": true,
   "dependencies": {
@@ -33,7 +32,6 @@
     "angular-eslint": "22.0.0",
     "eslint": "^10.3.0",
     "globals": "^17.7.0",
-    "husky": "^9.1.7",
     "jsdom": "^28.0.0",
     "postcss": "^8.5.3",
     "prettier": "^3.8.1",

@@ -1,4 +1,4 @@
-import { Component, input, model } from '@angular/core';
+import { Component, input, model, output } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 export interface TaskItem {
@@ -15,8 +15,13 @@ export interface TaskItem {
 export class TaskComponent {
   description = input('');
   isDone = model(false);
+  taskDeleted = output<void>();
 
   toggleTask() {
     this.isDone.update((value) => !value);
+  }
+
+  deleteTask() {
+    this.taskDeleted.emit();
   }
 }
